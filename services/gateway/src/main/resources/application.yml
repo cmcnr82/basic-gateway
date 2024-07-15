@@ -37,11 +37,11 @@ spring:
         - id: microservice-public
           uri: lb:http://MICROSERVICE
           predicates:
-            - Path=/api/v1/public/--
+            - Path=/public/test
         - id: microservice-private
           uri: lb:http://MICROSERVICE
           predicates:
-            - Path=/api/v1/private/**
+            - Path=/private/test
         - id: eureka
           uri: lb:http://Eureka
           predicates:
