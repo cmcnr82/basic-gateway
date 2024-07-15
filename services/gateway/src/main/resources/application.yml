@@ -34,14 +34,14 @@ spring:
           uri: lb:http://MICROSERVICE
           predicates:
               - Path=/bye
-        - id: microservice-public
+        - id: microservice-open
           uri: lb:http://MICROSERVICE
           predicates:
-            - Path=/public/test
-        - id: microservice-private
+            - Path=/open
+        - id: microservice-close
           uri: lb:http://MICROSERVICE
           predicates:
-            - Path=/private/test
+            - Path=/close
         - id: eureka
           uri: lb:http://Eureka
           predicates:
