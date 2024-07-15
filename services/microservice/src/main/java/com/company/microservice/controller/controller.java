@@ -19,12 +19,12 @@ public class controller {
         return ResponseEntity.ok("Bye...");
     }
 
-    @GetMapping("/public/test")
+    @GetMapping("/open/test")
     public ResponseEntity<String> all() {
         return ResponseEntity.ok("Public...");
     }
 
-    @GetMapping("/private/test")
+    @GetMapping("/close/test")
     public ResponseEntity<String> restricted() {
         return ResponseEntity.ok("Private...");
     }
