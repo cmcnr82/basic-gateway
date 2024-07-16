@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.codec.ServerCodecConfigurer;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -112,5 +113,10 @@ class SecurityConfig {
     Collection<GrantedAuthority> generateAuthoritiesFromClaim(Collection<String> roles) {
         return roles.stream().map(role -> new SimpleGrantedAuthority("ROLE_" + role)).collect(
                 Collectors.toList());
+    }
+
+    @Bean
+    public ServerCodecConfigurer serverCodecConfigurer() {
+        return ServerCodecConfigurer.create();
     }
 }
