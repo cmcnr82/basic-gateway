@@ -16,7 +16,7 @@ public class controller {
 
     @GetMapping("/personal/hello")
     public ResponseEntity<String> bye() {
-        return ResponseEntity.ok("Hello to you");
+        return ResponseEntity.ok("Hello to you...");
     }
 
 }
