@@ -58,15 +58,17 @@ class SecurityConfig {
     @Bean
     public SecurityFilterChain resourceServerFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(auth -> auth
-                // Allows preflight requests from browser
-                .requestMatchers(new AntPathRequestMatcher("/api/v1/all/**", HttpMethod.OPTIONS.name()))
+/*                .requestMatchers(new AntPathRequestMatcher("/api/v1/all/**", HttpMethod.OPTIONS.name()))
                 .permitAll()
                 .requestMatchers(new AntPathRequestMatcher("/api/v1/personal*"))
                 .hasRole("user")
                 .requestMatchers(new AntPathRequestMatcher("/"))
                 .permitAll()
                 .anyRequest()
-                .authenticated());
+                .authenticated()*/
+                .requestMatchers(new AntPathRequestMatcher("/**"))
+                .permitAll()
+        );
         http.oauth2ResourceServer(oauth2 -> oauth2
                 .jwt(Customizer.withDefaults()));
         http.oauth2Login(Customizer.withDefaults())
