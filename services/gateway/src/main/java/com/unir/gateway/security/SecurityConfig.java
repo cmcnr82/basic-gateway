@@ -59,7 +59,7 @@ class SecurityConfig {
     public SecurityFilterChain resourceServerFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(auth -> auth
                 // Allows preflight requests from browser
-                .requestMatchers(new AntPathRequestMatcher("/api/v1/all*", HttpMethod.OPTIONS.name()))
+                .requestMatchers(new AntPathRequestMatcher("/api/v1/all/**", HttpMethod.OPTIONS.name()))
                 .permitAll()
                 .requestMatchers(new AntPathRequestMatcher("/api/v1/personal*"))
                 .hasRole("user")
