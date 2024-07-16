@@ -19,6 +19,21 @@ eureka:
 spring:
   application:
     name: gateway
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: portfolio-tracker-client
+            authorization-grant-type: authorization_code
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: ${ISSUER_URI:https://keycloak-production-c9a0.up.railway.app/realms/PortfolioTrackerApp}
+            user-name-attribute: preferred_username
+      resourceserver:
+        jwt:
+          issuer-uri: ${ISSUER_URI:https://keycloak-production-c9a0.up.railway.app/realms/PortfolioTrackerApp}
   cloud:
     gateway:
       discovery:
