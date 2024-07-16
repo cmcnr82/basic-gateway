@@ -66,8 +66,9 @@ class SecurityConfig {
                 .permitAll()
                 .anyRequest()
                 .authenticated()*/
-                .requestMatchers(new AntPathRequestMatcher("/**"))
-                .permitAll()
+                //.requestMatchers(new AntPathRequestMatcher("/**"))
+                //.permitAll()
+                .anyRequest().permitAll()
         );
         http.oauth2ResourceServer(oauth2 -> oauth2
                 .jwt(Customizer.withDefaults()));
