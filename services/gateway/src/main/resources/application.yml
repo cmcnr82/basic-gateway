@@ -28,11 +28,11 @@ spring:
             scope: openid
         provider:
           keycloak:
-            issuer-uri: ${ISSUER_URI:https://keycloak-production-c9a0.up.railway.app/realms/PortfolioTrackerApp}
+            issuer-uri: ${ISSUER_URI:https:/keycloak-production-b82a.up.railway.app/realms/PortfolioTrackerApp}
             user-name-attribute: preferred_username
       resourceserver:
         jwt:
-          issuer-uri: ${ISSUER_URI:https://keycloak-production-c9a0.up.railway.app/realms/PortfolioTrackerApp}
+          issuer-uri: ${ISSUER_URI:https://keycloak-production-b82a.up.railway.app/realms/PortfolioTrackerApp}
   cloud:
     gateway:
       discovery:
