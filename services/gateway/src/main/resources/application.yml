@@ -26,22 +26,14 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: microservice-hello
+        - id: microservice-all
           uri: lb:http://MICROSERVICE
           predicates:
-            - Path=/api/v1/hello
-        - id: microservice-bye
+            - Path=/api/v1/all/**
+        - id: microservice-personal
           uri: lb:http://MICROSERVICE
           predicates:
-              - Path=/api/v1/bye
-        - id: microservice-open
-          uri: lb:http://MICROSERVICE
-          predicates:
-            - Path=/api/v1/open
-        - id: microservice-close
-          uri: lb:http://MICROSERVICE
-          predicates:
-            - Path=/api/v1/close
+            - Path=/api/v1/personal/**
         - id: eureka
           uri: lb:http://Eureka
           predicates:

@@ -9,23 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1")
 public class controller {
 
-    @GetMapping("/hello")
+    @GetMapping("/all/hello")
     public ResponseEntity<String> get() {
-        return ResponseEntity.ok("Hello from Railway + Spring!");
+        return ResponseEntity.ok("Hello to all...");
     }
 
-    @GetMapping("/bye")
+    @GetMapping("/personal/hello")
     public ResponseEntity<String> bye() {
-        return ResponseEntity.ok("Bye...");
+        return ResponseEntity.ok("Hello to you");
     }
 
-    @GetMapping("/open")
-    public ResponseEntity<String> all() {
-        return ResponseEntity.ok("Public...");
-    }
-
-    @GetMapping("/close")
-    public ResponseEntity<String> restricted() {
-        return ResponseEntity.ok("Private...");
-    }
 }
