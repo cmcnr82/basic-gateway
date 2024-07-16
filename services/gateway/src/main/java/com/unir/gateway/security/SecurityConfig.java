@@ -115,8 +115,5 @@ class SecurityConfig {
                 Collectors.toList());
     }
 
-    @Bean
-    public ServerCodecConfigurer serverCodecConfigurer() {
-        return ServerCodecConfigurer.create();
-    }
+
 }
